@@ -18,8 +18,9 @@ suitable ambulance on a road graph of Pune.
 
 ## Live demo
 
-The repo deploys to Vercel as-is: `vercel.json` serves the standalone demo at `/`
-(login `admin` / `ResQ@123`). Only the frontend demo is hosted; the C++ backend runs locally.
+- **Render** runs the C++ backend, which also serves the UI: https://resq-dispatch-backend.onrender.com
+- **Vercel** serves the same UI from `public/`; `vercel.json` forwards every `/api/*` call to the
+  Render backend, so both links run the real heap + Dijkstra. Login `admin` / `ResQ@123`.
 
 ## Deploying the full stack (Render)
 

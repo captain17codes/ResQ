@@ -2,8 +2,11 @@
   "framework": null,
   "buildCommand": "",
   "installCommand": "",
-  "outputDirectory": "demo",
+  "outputDirectory": "public",
   "rewrites": [
-    { "source": "/", "destination": "/ResQ_Dispatch_Standalone.html" }
+    { "source": "/api/:path*", "destination": "https://resq-dispatch-backend.onrender.com/api/:path*" }
+  ],
+  "headers": [
+    { "source": "/api/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] }
   ]
 }
