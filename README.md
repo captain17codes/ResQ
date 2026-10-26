@@ -18,10 +18,8 @@ suitable ambulance on a road graph of Pune.
 
 ## Live demo
 
-https://captain17codes.github.io/ResQ/demo/ResQ_Dispatch_Standalone.html (login `admin` / `ResQ@123`)
-
-The repo also deploys to Vercel as-is: `vercel.json` serves the standalone demo at `/`.
-Only the frontend demo is hosted; the C++ backend runs locally.
+The repo deploys to Vercel as-is: `vercel.json` serves the standalone demo at `/`
+(login `admin` / `ResQ@123`). Only the frontend demo is hosted; the C++ backend runs locally.
 
 ## Two ways to run
 
