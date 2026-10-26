@@ -192,8 +192,11 @@ Verified on Linux (g++ 13, SQLite 3.45):
 | `public/app.js` against the real service | Node with a stub DOM + a harness calling the C++ service, 60 checks | pass |
 | `src/main.cpp` start-up path and route signatures | compiled warning-free against a stand-in `crow.h` and run on real SQLite | pass |
 
-**Not yet verified:** the build with the real Crow library through CMake/vcpkg/Visual Studio on
-Windows, and the UI in a real browser against the running server.
+Also verified on Linux with the **real Crow v1.2.0**: the server builds with CMake, both test
+suites pass under `ctest`, the REST API (login, queue, new emergency, Dijkstra dispatch) works,
+and the UI loads and signs in in Chromium with no console errors.
+
+**Not yet verified:** the Windows build through vcpkg/Visual Studio, and the Docker image build itself.
 
 ## 6. Known limits
 
