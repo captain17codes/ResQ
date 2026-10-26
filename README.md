@@ -16,6 +16,13 @@ suitable ambulance on a road graph of Pune.
 | Graph (adjacency list) + Dijkstra | `src/graph.hpp` | Shortest road distance from the emergency to every available ambulance |
 | Relational tables (SQLite) | `db/schema.sql` | Persists users, emergencies, fleet and dispatch history |
 
+## Live demo
+
+https://captain17codes.github.io/ResQ/demo/ResQ_Dispatch_Standalone.html (login `admin` / `ResQ@123`)
+
+The repo also deploys to Vercel as-is: `vercel.json` serves the standalone demo at `/`.
+Only the frontend demo is hosted; the C++ backend runs locally.
+
 ## Two ways to run
 
 1. **Quick demo (no install):** open `demo/ResQ_Dispatch_Standalone.html` in any browser.

@@ -1,0 +1,9 @@
+{
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": "demo",
+  "rewrites": [
+    { "source": "/", "destination": "/ResQ_Dispatch_Standalone.html" }
+  ]
+}
