@@ -21,6 +21,15 @@ suitable ambulance on a road graph of Pune.
 The repo deploys to Vercel as-is: `vercel.json` serves the standalone demo at `/`
 (login `admin` / `ResQ@123`). Only the frontend demo is hosted; the C++ backend runs locally.
 
+## Deploying the full stack (Render)
+
+The backend serves the full UI too, so one Docker service is the whole app.
+`Dockerfile` builds the server with Crow + SQLite on Ubuntu and runs the tests during the build;
+`render.yaml` describes a free Render web service. On Render: **New > Blueprint**, pick this repo, apply.
+The server reads the `PORT` variable the host provides. On the free plan the service sleeps after
+~15 idle minutes (first request then takes ~1 minute) and the SQLite file resets on every restart
+back to the demo data.
+
 ## Two ways to run
 
 1. **Quick demo (no install):** open `demo/ResQ_Dispatch_Standalone.html` in any browser.
@@ -86,7 +95,7 @@ through `PUT /api/profile/password`.
 
 | Environment variable | Default | Meaning |
 |---|---|---|
-| `RESQ_PORT` | `8080` | HTTP port |
+| `RESQ_PORT` | `PORT`, else `8080` | HTTP port |
 | `RESQ_BIND` | `127.0.0.1` | Address to listen on (localhost only; `0.0.0.0` exposes it to the network) |
 | `RESQ_DB` | `<project>/resq.db` | SQLite file |
 | `RESQ_ADMIN_PASSWORD` | `ResQ@123` | Password for the first-created `admin` account |

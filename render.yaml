@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: resq-dispatch-backend
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: RESQ_ADMIN_PASSWORD
+        value: ResQ@123

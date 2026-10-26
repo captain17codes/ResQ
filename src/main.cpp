@@ -88,7 +88,8 @@ int main(int argc, char** argv) {
   const std::string dbPath = envOr("RESQ_DB", root + "/resq.db");
   const std::string publicDir = root + "/public";
   const std::string adminPassword = envOr("RESQ_ADMIN_PASSWORD", "ResQ@123");
-  const int port = std::atoi(envOr("RESQ_PORT", "8080").c_str());
+  // RESQ_PORT wins; otherwise PORT (set by hosts such as Render/Railway); otherwise 8080.
+  const int port = std::atoi(envOr("RESQ_PORT", envOr("PORT", "8080")).c_str());
   const std::string bindAddr = envOr("RESQ_BIND", "127.0.0.1");
 
   try {
